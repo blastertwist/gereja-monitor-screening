@@ -11,8 +11,9 @@ exports.up = function (knex) {
             table.uuid('user_id').references('id').inTable('users').onDelete('CASCADE');
             table.string('first_name');
             table.string('last_name');
-            table.integer('phone_number');
+            table.string('phone_number');
             table.string('address');
+            table.date('birth_date');
             table.timestamps(true, true);
         })
         .createTable('role_types', (table) => {
